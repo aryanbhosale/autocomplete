@@ -29,7 +29,9 @@ const Autocomplete = () => {
         }
         return (
             <ul>
-                {suggestions?.map((suggestion) => <li onClick={() => {suggestionSelected(suggestion)}}>{suggestion}</li>)}
+                {
+                    [suggestions]?.map((suggestion) => <li onClick={() => {suggestionSelected(suggestion)}}>{suggestion}</li>)
+                }
             </ul>
         );
     };
