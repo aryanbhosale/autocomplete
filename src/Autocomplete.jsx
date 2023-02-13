@@ -3,7 +3,7 @@ import './App.css';
 
 const Autocomplete = () => {
 
-    const items = ["Ritik", "Prayas", "Akhil", "Devesh", "Aryan", "Vidhi", "Ruchik"];
+    const items = ["Apple", "Orange", "Mango", "Delhi", "Aldona", "Vizag", "Raipur"];
 
     const [text, setText] = useState('');
     const [suggestions, setSuggestions] = useState([]);
