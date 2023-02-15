@@ -3,7 +3,7 @@ import './App.css';
 
 const Autocomplete = () => {
 
-    const items = ["Apple", "Orange", "Mango", "Delhi", "Aldona", "Vizag", "Raipur"];
+    const items = ["Apple", "Orange", "Mango", "Delhi", "Aldona", "Vizag", "Raipur", "Row", "BITS", "Pilani", "Hyderabad", "Aryan", "Mumbai"];
 
     const [text, setText] = useState('');
     const [suggestions, setSuggestions] = useState([]);
@@ -20,7 +20,7 @@ const Autocomplete = () => {
             });
         }
         setText(value);
-        setSuggestions({ suggestions });
+        setSuggestions( suggestions );
     };
 
     const renderSuggestions = () => {
@@ -30,7 +30,7 @@ const Autocomplete = () => {
         return (
             <ul>
                 {
-                    [suggestions]?.map((suggestion) => <li onClick={() => {suggestionSelected(suggestion)}}>{suggestion}</li>)
+                    suggestions?.map((suggestion) => <div key={suggestion}><li onClick={() => {suggestionSelected(suggestion)}}>{suggestion}</li></div>)
                 }
             </ul>
         );
