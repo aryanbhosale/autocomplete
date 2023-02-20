@@ -1,0 +1,15 @@
+.Autocomplete {
+    margin: 1em;
+    width: 100%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+  
+  .Autocomplete input {
+    width: 50%;
+  }
+  
+  .App-component {
+    margin: 150px auto 0;
+    width: 600px;
+  }
