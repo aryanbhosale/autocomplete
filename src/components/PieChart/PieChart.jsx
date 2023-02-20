@@ -9,20 +9,26 @@ ChartJS.register(
   Legend
 );
 
+
 const PieChart = () => {
-  
+
   const data = {
-    labels: ['Not Graded', 'Graded'],
+    labels: ['Ungraded', 'Graded'],
     datasets: [{
       label: 'Assignments',
-      data: [3, 6],
-      backgroundColor: ['red', 'blue'],
-      borderColor: ['red', 'blue'],
+      data: [14, 20],
+      backgroundColor: ['#CF2027', '#2B2B88'],
+      borderColor: ['#CF2027', '#2B2B88'],
     }]
   }
 
   const options = {
-
+    cutout: 80,
+    plugins: {
+      legend: {
+        display: false
+      }
+    }
   }
 
   const textCenter = {
@@ -31,8 +37,8 @@ const PieChart = () => {
       const { ctx, data } = chart;
 
       ctx.save();
-      ctx.font = 'bolder 30px sans-serif';
-      ctx.fillStyle = 'blue';
+      ctx.font = 'bolder 1em sans-serif';
+      ctx.fillStyle = '#5CCAE8';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
       ctx.fillText(`Graded: ${data.datasets[0].data[0]} / ${data.datasets[0].data[1]}`, chart.getDatasetMeta(0).data[0].x, chart.getDatasetMeta(0).data[0].y)
@@ -41,7 +47,7 @@ const PieChart = () => {
 
   return (
     <div>
-      <div style={{ width: '50%', height: '50%', margin: 'auto', padding: '20px' }}>
+      <div style={{ width: '13%', height: '13%', margin: 'auto', padding: '20px' }}>
         <Doughnut
           data={data}
           options={options}
